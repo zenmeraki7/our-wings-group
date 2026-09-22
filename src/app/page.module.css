@@ -1,0 +1,1426 @@
+/* =========================================================
+   BRAND TOKENS
+========================================================= */
+
+.hero {
+  --indigo-950: #111f42;
+  --indigo-900: #172554;
+  --indigo-850: #1d3265;
+  --indigo-700: #3157a4;
+
+  --sand-500: #d8b47a;
+  --sand-400: #e2c28d;
+  --sand-300: #ecd7b0;
+
+  --ivory: #f8f5ef;
+  --white: #ffffff;
+
+  --text-light: #eef2fb;
+
+  position: relative;
+  overflow: hidden;
+  background: var(--indigo-900);
+  font-family: var(--font-inter), sans-serif;
+  padding-top: 86px;
+}
+
+
+/* =========================================================
+   MAIN HERO
+========================================================= */
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(500px, 1fr);
+
+  min-height: 590px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.heroContent {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    44px
+    clamp(32px, 7vw, 130px)
+    72px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 31, 66, 1) 0%,
+      rgba(23, 37, 84, 0.99) 62%,
+      rgba(23, 37, 84, 0.91) 82%,
+      rgba(23, 37, 84, 0.3) 100%
+    );
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 22px;
+
+  color: var(--sand-400);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+}
+
+.eyebrowDot {
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  max-width: 730px;
+
+  color: var(--white);
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      56px,
+      5.2vw,
+      88px
+    );
+
+  font-weight: 600;
+
+  line-height: 0.96;
+
+  letter-spacing: -0.045em;
+}
+
+.heroTitleAccent {
+  margin-top: 5px;
+
+  color: var(--sand-400);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.heroDescription {
+  max-width: 650px;
+
+  margin:
+    28px
+    0
+    0;
+
+  color: rgba(255, 255, 255, 0.89);
+
+  font-size:
+    clamp(
+      16px,
+      1.35vw,
+      20px
+    );
+
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  margin-top: 32px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 28px;
+
+  min-height: 56px;
+
+  padding: 0 28px;
+
+  border-radius: 2px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.primaryButton svg,
+.secondaryButton svg {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+}
+
+.primaryButton {
+  color: var(--indigo-950);
+
+  background: var(--sand-500);
+
+  border: 1px solid var(--sand-500);
+}
+
+.primaryButton:hover {
+  background: var(--sand-400);
+
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  color: var(--white);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.62);
+}
+
+.secondaryButton:hover {
+  color: var(--indigo-950);
+
+  background: var(--white);
+
+  border-color: var(--white);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.visual {
+  position: relative;
+
+  min-height: 590px;
+
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center center;
+
+  transform: scale(1.01);
+}
+
+
+/* Smooth transition between indigo and image */
+
+.imageShade {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17, 31, 66, 0.75) 0%,
+      rgba(17, 31, 66, 0.2) 22%,
+      transparent 45%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(23, 37, 84, 0.97) 0%,
+      rgba(23, 37, 84, 0.45) 15%,
+      rgba(23, 37, 84, 0.04) 42%,
+      rgba(23, 37, 84, 0.04) 70%,
+      rgba(17, 31, 66, 0.4) 100%
+    );
+}
+
+
+/* =========================================================
+   IMAGE MESSAGE
+========================================================= */
+
+.visualMessage {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 36px;
+  left: 42%;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(7, 10, 30, 0.9);
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      24px,
+      2.1vw,
+      36px
+    );
+
+  font-style: italic;
+
+  line-height: 1.1;
+
+  text-align: center;
+
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.visualMessage span:nth-child(2) {
+  color: var(--sand-400);
+}
+
+
+/* =========================================================
+   SIDE KEYWORDS
+========================================================= */
+
+.visualKeywords {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 36px;
+  right: 38px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  color: rgba(255, 255, 255, 0.94);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.keywordLine {
+  width: 31px;
+  height: 2px;
+
+  margin-top: 4px;
+
+  background: var(--sand-500);
+}
+
+
+/* =========================================================
+   TRAVEL STAMP
+========================================================= */
+
+.travelStamp {
+  position: absolute;
+
+  z-index: 5;
+
+  right: 42px;
+  bottom: 60px;
+
+  display: grid;
+  place-items: center;
+
+  width: 115px;
+  height: 115px;
+
+  color: rgba(255, 255, 255, 0.95);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.65);
+
+  border-radius: 50%;
+
+  box-shadow:
+    inset 0 0 0 5px
+    rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(5px);
+}
+
+.travelStamp::before {
+  content: "GLOBAL CAREERS • BRIGHTER FUTURES •";
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+.travelStampInner {
+  display: grid;
+  place-items: center;
+
+  width: 50px;
+  height: 50px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.3);
+
+  border-radius: 50%;
+}
+
+.travelStampInner svg {
+  width: 28px;
+}
+
+
+/* =========================================================
+   WORLD MAP DECORATION
+========================================================= */
+
+.worldMap {
+  position: absolute;
+
+  z-index: 1;
+
+  top: 35px;
+  left: 27%;
+
+  width: 530px;
+  height: 330px;
+
+  opacity: 0.07;
+
+  pointer-events: none;
+
+  background-image:
+    url("/images/world-map.svg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.trustStrip {
+  position: relative;
+
+  z-index: 10;
+
+  color: var(--indigo-900);
+
+  background: var(--white);
+
+  border-bottom:
+    1px solid
+    rgba(23, 37, 84, 0.08);
+}
+
+.trustInner {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding:
+    24px
+    40px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  gap: 19px;
+
+  padding: 7px 30px;
+
+  border-right:
+    1px solid
+    rgba(23, 37, 84, 0.12);
+}
+
+.trustItem:first-child {
+  padding-left: 0;
+}
+
+.trustItem:last-child {
+  border-right: 0;
+}
+
+.trustIcon {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 auto;
+
+  width: 46px;
+  height: 46px;
+
+  color: var(--indigo-900);
+}
+
+.trustIcon svg {
+  width: 42px;
+  height: 42px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trustItem h3 {
+  margin: 0 0 5px;
+
+  color: var(--indigo-900);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.trustItem p {
+  margin: 0;
+
+  color: #596273;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .heroInner {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(380px, 0.8fr);
+  }
+
+  .heroContent {
+    padding:
+      70px
+      38px;
+  }
+
+  .heroTitle {
+    font-size:
+      clamp(
+        53px,
+        6vw,
+        72px
+      );
+  }
+
+  .visualMessage {
+    display: none;
+  }
+
+  .trustInner {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .trustItem:nth-child(2) {
+    border-right: 0;
+  }
+
+  .trustItem {
+    padding: 15px 25px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 820px) {
+  .heroInner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heroContent {
+    min-height: auto;
+
+    padding:
+      64px
+      22px
+      54px;
+
+    background:
+      linear-gradient(
+        180deg,
+        var(--indigo-900) 0%,
+        var(--indigo-950) 100%
+      );
+  }
+
+  .worldMap {
+    top: 80px;
+    left: 0;
+
+    width: 100%;
+
+    opacity: 0.045;
+  }
+
+  .eyebrow {
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.2em;
+  }
+
+  .heroTitle {
+    max-width: 600px;
+
+    font-size:
+      clamp(
+        46px,
+        13vw,
+        66px
+      );
+
+    line-height: 0.97;
+  }
+
+  .heroDescription {
+    margin-top: 23px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+  }
+
+  .heroActions {
+    align-items: stretch;
+    flex-direction: column;
+
+    margin-top: 28px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+
+    min-height: 56px;
+  }
+
+  .visual {
+    min-height: 390px;
+  }
+
+  .heroImage {
+    object-position: 65% center;
+  }
+
+  .imageShade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(17, 31, 66, 0.22),
+        rgba(17, 31, 66, 0.04) 45%,
+        rgba(17, 31, 66, 0.45)
+      );
+  }
+
+  .travelStamp {
+    right: 22px;
+    bottom: 24px;
+
+    width: 92px;
+    height: 92px;
+  }
+
+  .visualKeywords {
+    top: 25px;
+    right: 20px;
+  }
+
+  .trustInner {
+    grid-template-columns: 1fr;
+
+    padding:
+      18px
+      22px;
+  }
+
+  .trustItem {
+    padding:
+      17px
+      0;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(23, 37, 84, 0.1);
+  }
+
+  .trustItem:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding-top: 48px;
+  }
+
+  .heroTitle {
+    font-size: 45px;
+  }
+
+  .visual {
+    min-height: 330px;
+  }
+
+  .travelStamp {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   ABOUT OUR WINGS
+========================================================= */
+
+.aboutSection {
+  position: relative;
+
+  padding: 84px 0 90px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fbf8f1 0%,
+      #fffdf8 52%,
+      #f8f4ec 100%
+    );
+}
+
+.aboutContainer {
+  width: min(1500px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.aboutGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(360px, 0.95fr)
+    minmax(500px, 1.2fr)
+    minmax(250px, 0.55fr);
+
+  gap: 52px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.aboutContent {
+  max-width: 570px;
+}
+
+.aboutEyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+
+  color: #727988;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.27em;
+}
+
+.aboutEyebrowLine {
+  display: block;
+
+  width: 38px;
+  height: 2px;
+
+  background: #d8b47a;
+}
+
+.aboutTitle {
+  margin: 0 0 25px;
+
+  color: #172554;
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      44px,
+      4vw,
+      66px
+    );
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: -0.045em;
+}
+
+.aboutTitle span {
+  color: #c3914c;
+}
+
+.aboutDescription {
+  max-width: 540px;
+
+  margin: 0 0 12px;
+
+  color: #505969;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.aboutBottom {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  margin-top: 29px;
+}
+
+.aboutButton {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 26px;
+
+  min-height: 50px;
+
+  padding: 0 25px;
+
+  background: #d8b47a;
+
+  color: #172554;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.aboutButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.aboutButton:hover {
+  background: #e2c28d;
+  transform: translateY(-2px);
+}
+
+.aboutTagline {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: #7a8190;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  white-space: nowrap;
+}
+
+.taglineLine {
+  width: 50px;
+  height: 1px;
+
+  background: #d8b47a;
+}
+
+
+/* =========================================================
+   VISUAL COLLAGE
+========================================================= */
+
+.aboutVisual {
+  position: relative;
+}
+
+.aboutMosaic {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 450px;
+}
+
+.aboutImageBox {
+  position: absolute;
+
+  overflow: hidden;
+
+  background: #e4e8ef;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(17, 31, 66, 0.1);
+}
+
+.aboutImageBox img {
+  object-fit: cover;
+
+  transition:
+    transform 500ms ease;
+}
+
+.aboutImageBox:hover img {
+  transform: scale(1.035);
+}
+
+
+/* construction worker */
+
+.workerImage {
+  left: 11%;
+  top: 55px;
+
+  width: 25%;
+  height: 230px;
+}
+
+
+/* nurse */
+
+.nurseImage {
+  left: 37%;
+  top: 0;
+
+  width: 30%;
+  height: 250px;
+}
+
+
+/* passport */
+
+.passportImageBox {
+  right: 3%;
+  top: 15px;
+
+  width: 30%;
+  height: 150px;
+}
+
+
+/* aircraft window */
+
+.flightImage {
+  left: 37%;
+  bottom: 15px;
+
+  width: 44%;
+  height: 184px;
+}
+
+
+/* city */
+
+.cityImage {
+  right: 0;
+  bottom: 35px;
+
+  width: 19%;
+  height: 218px;
+}
+
+
+/* =========================================================
+   HANDWRITING
+========================================================= */
+
+.aboutHandwriting {
+  position: absolute;
+
+  left: 0;
+  bottom: 49px;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #596f9b;
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-style: italic;
+
+  font-size: 20px;
+
+  line-height: 1.3;
+
+  transform: rotate(-7deg);
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.aboutStats {
+  padding:
+    7px
+    0
+    7px
+    30px;
+
+  border-left:
+    1px solid
+    rgba(23, 37, 84, 0.1);
+}
+
+.aboutStat {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 23px 0;
+
+  border-bottom:
+    1px solid
+    rgba(23, 37, 84, 0.09);
+}
+
+.aboutStat:last-child {
+  border-bottom: 0;
+}
+
+.aboutStatIcon {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 auto;
+
+  width: 44px;
+  height: 44px;
+
+  color: #c8944c;
+}
+
+.aboutStatIcon svg {
+  width: 40px;
+  height: 40px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.aboutStatValue,
+.aboutStatCompact {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #172554;
+
+  font-size: 29px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+}
+
+.aboutStatCompact {
+  font-size: 17px;
+
+  line-height: 1.2;
+}
+
+.aboutStatLabel {
+  display: block;
+
+  color: #697182;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.025em;
+}
+
+
+/* =========================================================
+   1250px
+========================================================= */
+
+@media (max-width: 1250px) {
+  .aboutGrid {
+    grid-template-columns:
+      0.9fr
+      1.1fr;
+
+    gap: 40px;
+  }
+
+  .aboutStats {
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    padding:
+      26px
+      0
+      0;
+
+    border-left: 0;
+
+    border-top:
+      1px solid
+      rgba(23, 37, 84, 0.09);
+  }
+
+  .aboutStat {
+    padding:
+      10px
+      22px;
+
+    border-bottom: 0;
+
+    border-right:
+      1px solid
+      rgba(23, 37, 84, 0.09);
+  }
+
+  .aboutStat:first-child {
+    padding-left: 0;
+  }
+
+  .aboutStat:last-child {
+    border-right: 0;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .aboutSection {
+    padding: 65px 0 70px;
+  }
+
+  .aboutContainer {
+    width: min(
+      100% - 36px,
+      740px
+    );
+  }
+
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutContent {
+    max-width: 650px;
+  }
+
+  .aboutTitle {
+    font-size:
+      clamp(
+        42px,
+        8vw,
+        58px
+      );
+  }
+
+  .aboutBottom {
+    flex-wrap: wrap;
+  }
+
+  .aboutMosaic {
+    min-height: 485px;
+  }
+
+  .aboutStats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .aboutStat {
+    border-bottom:
+      1px solid
+      rgba(23, 37, 84, 0.09);
+  }
+
+  .aboutStat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .aboutStat:nth-child(3),
+  .aboutStat:nth-child(4) {
+    border-bottom: 0;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .aboutSection {
+    padding:
+      52px
+      0
+      60px;
+  }
+
+  .aboutTitle {
+    font-size: 42px;
+  }
+
+  .aboutDescription {
+    font-size: 15px;
+  }
+
+  .aboutBottom {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .aboutButton {
+    justify-content: space-between;
+
+    width: 100%;
+  }
+
+  .aboutTagline {
+    white-space: normal;
+  }
+
+  .aboutMosaic {
+    min-height: 370px;
+  }
+
+  .workerImage {
+    left: 0;
+    top: 35px;
+
+    width: 34%;
+    height: 185px;
+  }
+
+  .nurseImage {
+    left: 36%;
+    top: 0;
+
+    width: 38%;
+    height: 195px;
+  }
+
+  .passportImageBox {
+    right: 0;
+    top: 38px;
+
+    width: 24%;
+    height: 120px;
+  }
+
+  .flightImage {
+    left: 28%;
+    bottom: 15px;
+
+    width: 51%;
+    height: 150px;
+  }
+
+  .cityImage {
+    right: 0;
+    bottom: 28px;
+
+    width: 24%;
+    height: 170px;
+  }
+
+  .aboutHandwriting {
+    display: none;
+  }
+
+  .aboutStats {
+    grid-template-columns: 1fr;
+
+    padding-top: 15px;
+  }
+
+  .aboutStat {
+    padding:
+      18px
+      0;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(23, 37, 84, 0.09);
+  }
+
+  .aboutStat:nth-child(3) {
+    border-bottom:
+      1px solid
+      rgba(23, 37, 84, 0.09);
+  }
+
+  .aboutStatValue {
+    font-size: 27px;
+  }
+}

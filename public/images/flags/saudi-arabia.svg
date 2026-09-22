@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 48" width="70" height="48">
+  <rect width="70" height="48" rx="3" fill="#006c35"/>
+  <!-- Simplified representation of Saudi emblem & text in white -->
+  <path d="M15 22h40v2H15z" fill="#ffffff" opacity="0.9"/>
+  <path d="M22 28h26v2H22z" fill="#ffffff" opacity="0.9"/>
+  <!-- Sword -->
+  <path d="M18 33h34v2H18z" fill="#ffffff"/>
+  <path d="M18 31v6M21 32v4" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="35" cy="18" r="2.5" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,828 @@
+.section {
+  --indigo-950: #111f42;
+  --indigo-900: #172554;
+  --indigo-800: #203565;
+
+  --sand-500: #d8b47a;
+  --sand-400: #e4c58f;
+
+  --ivory: #faf7f1;
+  --text: #4f5b70;
+
+  padding: 88px 0 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fcfaf6 0%,
+      #faf7f1 100%
+    );
+}
+
+.container {
+  width: min(1490px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(400px, 0.85fr)
+    minmax(540px, 1.15fr);
+
+  gap: 60px;
+
+  align-items: center;
+
+  margin-bottom: 46px;
+}
+
+.headerCopy {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 17px;
+
+  color: #536684;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+.eyebrowLine {
+  width: 40px;
+  height: 2px;
+
+  background: var(--sand-500);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  color: var(--indigo-900);
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      52px,
+      5vw,
+      78px
+    );
+
+  font-weight: 600;
+
+  line-height: 0.96;
+
+  letter-spacing: -0.045em;
+}
+
+.title span {
+  color: #b98544;
+}
+
+.intro {
+  max-width: 620px;
+
+  margin:
+    25px
+    0
+    0;
+
+  color: var(--text);
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TRUST ROW
+========================================================= */
+
+.trustRow {
+  display: flex;
+
+  margin-top: 30px;
+
+  border-top:
+    1px solid
+    rgba(23, 37, 84, 0.1);
+
+  padding-top: 22px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    0
+    28px;
+
+  border-right:
+    1px solid
+    rgba(23, 37, 84, 0.14);
+}
+
+.trustItem:first-child {
+  padding-left: 0;
+}
+
+.trustItem:last-child {
+  border-right: 0;
+}
+
+.trustIcon {
+  width: 37px;
+  height: 37px;
+
+  color: #bd8843;
+}
+
+.trustIcon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.9;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trustItem strong,
+.trustItem span {
+  display: block;
+}
+
+.trustItem strong {
+  color: var(--indigo-900);
+
+  font-size: 13px;
+}
+
+.trustItem span {
+  margin-top: 2px;
+
+  color: #59677d;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.mapArea {
+  position: relative;
+
+  min-height: 290px;
+}
+
+.worldMap {
+  position: absolute;
+
+  top: -35px;
+  left: -20px;
+
+  width: 86%;
+  height: 350px;
+
+  color:
+    rgba(49, 87, 164, 0.25);
+}
+
+.mapShape {
+  fill: url("#mapDots");
+  opacity: 0.75;
+}
+
+.route {
+  fill: none;
+
+  stroke: #c99754;
+
+  stroke-width: 1.6;
+}
+
+.mapDot {
+  fill: #c99754;
+}
+
+.handwritten {
+  position: absolute;
+
+  top: 25px;
+  right: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  color: var(--indigo-900);
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-style: italic;
+
+  font-size: 30px;
+
+  line-height: 0.9;
+
+  transform: rotate(-7deg);
+}
+
+.mapNote {
+  position: absolute;
+
+  right: 4px;
+  bottom: 20px;
+
+  margin: 0;
+
+  color: #53627a;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   DESTINATION GRID
+========================================================= */
+
+.destinationGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.destinationCard {
+  position: relative;
+
+  min-height: 270px;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  color: white;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 11px 27px
+    rgba(17, 31, 66, 0.14);
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.destinationCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 38px
+    rgba(17, 31, 66, 0.2);
+}
+
+.destinationImage {
+  object-fit: cover;
+
+  transition:
+    transform 650ms ease;
+}
+
+.destinationCard:hover .destinationImage {
+  transform: scale(1.045);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17, 31, 66, 0.04) 5%,
+      rgba(17, 31, 66, 0.28) 42%,
+      rgba(17, 31, 66, 0.96) 100%
+    );
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+
+  min-height: 270px;
+
+  padding: 26px 29px 24px;
+}
+
+.countryMeta {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.countryCode {
+  display: grid;
+  place-items: center;
+
+  min-width: 41px;
+  height: 35px;
+
+  padding: 0 10px;
+
+  border-radius: 5px;
+
+  color: var(--indigo-950);
+
+  background: var(--sand-500);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.flag {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 29px;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  background: white;
+
+  box-shadow:
+    0 5px 12px
+    rgba(0, 0, 0, 0.14);
+}
+
+.flag img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.cardBottom h3 {
+  margin:
+    0
+    0
+    10px;
+
+  color: white;
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-size: 29px;
+
+  line-height: 1.05;
+
+  font-weight: 600;
+}
+
+.cardBottom p {
+  max-width: 430px;
+
+  min-height: 48px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   CARD LINK
+========================================================= */
+
+.cardLinkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 21px;
+}
+
+.viewText {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: var(--sand-400);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.viewText svg {
+  width: 17px;
+  height: 17px;
+}
+
+.circleArrow {
+  display: grid;
+  place-items: center;
+
+  width: 43px;
+  height: 43px;
+
+  color: white;
+
+  border:
+    1px solid
+    var(--sand-500);
+
+  border-radius: 50%;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.circleArrow svg {
+  width: 18px;
+}
+
+.destinationCard:hover .circleArrow {
+  color: var(--indigo-950);
+
+  background: var(--sand-500);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   CTA BANNER
+========================================================= */
+
+.ctaBanner {
+  position: relative;
+
+  min-height: 135px;
+
+  margin-top: 28px;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  background: var(--indigo-950);
+
+  box-shadow:
+    0 12px 28px
+    rgba(17, 31, 66, 0.15);
+}
+
+.ctaOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #111f42 0%,
+      #172554 60%,
+      rgba(23, 37, 84, 0.73) 83%,
+      rgba(23, 37, 84, 0.25) 100%
+    );
+
+  z-index: 2;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, 1.05fr)
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 38px;
+
+  min-height: 135px;
+
+  padding: 26px 40px;
+}
+
+.ctaEyebrow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--sand-400);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+}
+
+.ctaCopy h3 {
+  margin: 0;
+
+  color: white;
+
+  font-family:
+    var(--font-playfair),
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      25px,
+      2vw,
+      35px
+    );
+
+  font-weight: 600;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 24px;
+
+  min-height: 51px;
+
+  padding: 0 24px;
+
+  background: var(--sand-500);
+
+  color: var(--indigo-950);
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.ctaButton:hover {
+  background: var(--sand-400);
+
+  transform: translateY(-2px);
+}
+
+.ctaButton svg {
+  width: 18px;
+}
+
+.ctaFeatures {
+  display: flex;
+  align-items: center;
+
+  gap: 27px;
+
+  padding-left: 5px;
+
+  border-left:
+    1px solid
+    rgba(255, 255, 255, 0.22);
+}
+
+.miniFeature {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  color: white;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
+}
+
+.miniFeatureIcon {
+  width: 34px;
+  height: 34px;
+}
+
+.miniFeatureIcon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.aircraftVisual {
+  position: absolute;
+
+  right: -20px;
+  top: 0;
+
+  width: 390px;
+  height: 100%;
+
+  opacity: 0.58;
+}
+
+.aircraftImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .mapArea {
+    min-height: 260px;
+  }
+
+  .worldMap {
+    top: -70px;
+  }
+
+  .destinationGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .ctaContent {
+    grid-template-columns:
+      1fr auto;
+  }
+
+  .ctaFeatures {
+    grid-column: 1 / -1;
+
+    border-left: 0;
+
+    padding-left: 0;
+  }
+}
+
+
+@media (max-width: 760px) {
+  .section {
+    padding: 64px 0 74px;
+  }
+
+  .container {
+    width:
+      min(
+        100% - 32px,
+        680px
+      );
+  }
+
+  .title {
+    font-size:
+      clamp(
+        44px,
+        12vw,
+        62px
+      );
+  }
+
+  .trustRow {
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .trustItem {
+    padding: 0;
+
+    border-right: 0;
+  }
+
+  .mapArea {
+    display: none;
+  }
+
+  .destinationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .destinationCard,
+  .cardContent {
+    min-height: 290px;
+  }
+
+  .ctaContent {
+    grid-template-columns: 1fr;
+
+    padding: 31px 25px;
+
+    gap: 22px;
+  }
+
+  .ctaButton {
+    justify-content: space-between;
+
+    width: 100%;
+  }
+
+  .ctaFeatures {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 17px;
+  }
+
+  .aircraftVisual {
+    width: 100%;
+
+    opacity: 0.15;
+  }
+}
