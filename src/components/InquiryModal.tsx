@@ -58,7 +58,7 @@ export default function InquiryModal({ isOpen, onClose, defaultDivision }: Inqui
       <div
         className="modal-box"
         onClick={(e) => e.stopPropagation()}
-        style={{ padding: "2.5rem" }}
+        style={{ padding: "clamp(1.25rem, 5vw, 2.5rem)" }}
       >
         {/* Close Button */}
         <button
@@ -102,16 +102,16 @@ export default function InquiryModal({ isOpen, onClose, defaultDivision }: Inqui
                 <Sparkles size={14} />
                 <span>CONFIDENTIAL INQUIRY</span>
               </div>
-              <h3 style={{ fontSize: "1.6rem", color: "#fff" }}>
+              <h3 style={{ fontSize: "clamp(1.25rem, 4vw, 1.6rem)", color: "#fff" }}>
                 Partner With Our Wings Group
               </h3>
               <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", marginTop: "0.25rem" }}>
-                Connect directly with our corporate dispatch, aviation charter desk, or venture partners.
+                Connect directly with our corporate dispatch, recruitment desk, or overseas placement team.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              <div className="modal-grid-2">
                 <div>
                   <label
                     style={{
@@ -127,7 +127,7 @@ export default function InquiryModal({ isOpen, onClose, defaultDivision }: Inqui
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Lord Alexander Wright"
+                    placeholder="e.g. Alexander Wright"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     style={inputStyle}
@@ -157,7 +157,7 @@ export default function InquiryModal({ isOpen, onClose, defaultDivision }: Inqui
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              <div className="modal-grid-2">
                 <div>
                   <label
                     style={{

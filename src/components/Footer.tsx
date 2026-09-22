@@ -16,10 +16,11 @@ export default function Footer() {
 
   return (
     <footer
+      id="contact"
       style={{
         background: "#04070d",
-        borderTop: "1px solid rgba(56, 189, 248, 0.15)",
-        paddingTop: "5rem",
+        borderTop: "1px solid rgba(229, 194, 135, 0.2)",
+        paddingTop: "clamp(3.5rem, 6vw, 5rem)",
         paddingBottom: "3rem",
         position: "relative",
       }}
@@ -29,10 +30,10 @@ export default function Footer() {
         <div
           className="glass-card newsletter-grid"
           style={{
-            padding: "2.5rem",
-            marginBottom: "4.5rem",
+            padding: "clamp(1.5rem, 4vw, 2.5rem)",
+            marginBottom: "4rem",
             background: "linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(8, 14, 28, 0.95) 100%)",
-            borderColor: "rgba(56, 189, 248, 0.25)",
+            borderColor: "rgba(229, 194, 135, 0.25)",
             display: "grid",
             gridTemplateColumns: "1.2fr 0.8fr",
             gap: "2.5rem",
@@ -52,7 +53,7 @@ export default function Footer() {
             >
               GLOBAL WORKFORCE INTELLIGENCE
             </div>
-            <h3 style={{ fontSize: "1.5rem", color: "#fff", marginBottom: "0.5rem" }}>
+            <h3 style={{ fontSize: "clamp(1.25rem, 3vw, 1.5rem)", color: "#fff", marginBottom: "0.5rem" }}>
               Subscribe to the Our Wings Talent Briefing
             </h3>
             <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
@@ -65,6 +66,7 @@ export default function Footer() {
             {!subscribed ? (
               <form
                 onSubmit={handleSubscribe}
+                className="newsletter-form"
                 style={{ display: "flex", gap: "0.6rem" }}
               >
                 <input
@@ -75,6 +77,7 @@ export default function Footer() {
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   style={{
                     flex: 1,
+                    minWidth: 0,
                     padding: "0.75rem 1rem",
                     borderRadius: "var(--radius-md)",
                     background: "rgba(255, 255, 255, 0.05)",
@@ -92,6 +95,10 @@ export default function Footer() {
                     background: "linear-gradient(135deg, #e8cca4 0%, #dfc295 50%, #c99f5e 100%)",
                     color: "#070a1e",
                     fontWeight: 700,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.45rem",
+                    flexShrink: 0,
                   }}
                 >
                   <span>Subscribe</span>
@@ -235,7 +242,7 @@ export default function Footer() {
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: "1rem",
+            gap: "1.2rem",
             fontSize: "0.82rem",
             color: "var(--text-muted)",
           }}
@@ -243,7 +250,7 @@ export default function Footer() {
           <div>
             © {new Date().getFullYear()} Our Wings Group. Government Authorized Recruitment Agency (MEA Approved). All rights reserved.
           </div>
-          <div style={{ display: "flex", gap: "1.5rem" }}>
+          <div style={{ display: "flex", gap: "clamp(0.75rem, 3vw, 1.5rem)", flexWrap: "wrap" }}>
             <a href="#" style={{ color: "var(--text-muted)" }}>Privacy Policy</a>
             <a href="#" style={{ color: "var(--text-muted)" }}>Terms of Recruitment</a>
             <a href="#" style={{ color: "var(--text-muted)" }}>MEA Compliance</a>
@@ -256,14 +263,27 @@ export default function Footer() {
         @media (max-width: 991px) {
           .newsletter-grid {
             grid-template-columns: 1fr !important;
+            gap: 1.75rem !important;
           }
           .footer-links-grid {
             grid-template-columns: 1fr 1fr !important;
+            gap: 2.2rem 1.5rem !important;
           }
         }
         @media (max-width: 600px) {
           .footer-links-grid {
             grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .newsletter-form {
+            flex-direction: column !important;
+          }
+          .newsletter-form button {
+            width: 100% !important;
+            justify-content: center !important;
+            min-height: 48px;
           }
         }
       `}</style>

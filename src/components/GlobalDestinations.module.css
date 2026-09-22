@@ -33,10 +33,10 @@
   display: grid;
 
   grid-template-columns:
-    minmax(400px, 0.85fr)
-    minmax(540px, 1.15fr);
+    minmax(0, 0.85fr)
+    minmax(0, 1.15fr);
 
-  gap: 60px;
+  gap: clamp(30px, 4vw, 60px);
 
   align-items: center;
 
@@ -86,16 +86,18 @@
 
   font-size:
     clamp(
-      52px,
-      5vw,
+      42px,
+      4.5vw,
       78px
     );
 
   font-weight: 600;
 
-  line-height: 0.96;
+  line-height: 0.98;
 
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .title span {
@@ -753,35 +755,32 @@
 
 @media (max-width: 760px) {
   .section {
-    padding: 64px 0 74px;
+    padding: 60px 0 70px;
   }
 
   .container {
-    width:
-      min(
-        100% - 32px,
-        680px
-      );
+    width: min(calc(100% - 32px), 680px);
   }
 
   .title {
     font-size:
       clamp(
-        44px,
-        12vw,
-        62px
+        28px,
+        8.5vw,
+        54px
       );
+    line-height: 1.05;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .trustRow {
     flex-direction: column;
-
-    gap: 18px;
+    gap: 16px;
   }
 
   .trustItem {
     padding: 0;
-
     border-right: 0;
   }
 
@@ -791,38 +790,67 @@
 
   .destinationGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .destinationCard,
   .cardContent {
-    min-height: 290px;
+    min-height: 270px;
   }
 
   .ctaContent {
     grid-template-columns: 1fr;
-
-    padding: 31px 25px;
-
-    gap: 22px;
+    padding: 28px 22px;
+    gap: 20px;
   }
 
   .ctaButton {
     justify-content: space-between;
-
     width: 100%;
+    min-height: 50px;
   }
 
   .ctaFeatures {
     flex-direction: column;
-
     align-items: flex-start;
-
-    gap: 17px;
+    gap: 16px;
   }
 
   .aircraftVisual {
     width: 100%;
-
     opacity: 0.15;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 48px 0 56px;
+  }
+
+  .container {
+    width: calc(100% - clamp(20px, 5vw, 32px));
+  }
+
+  .title {
+    font-size: clamp(26px, 8vw, 36px);
+  }
+
+  .intro {
+    font-size: 14.5px;
+    margin-top: 16px;
+  }
+
+  .ctaContent {
+    padding: 22px 16px;
+  }
+
+  .ctaBanner h3 {
+    font-size: clamp(20px, 5.5vw, 24px);
+  }
+
+  .destinationCard,
+  .cardContent {
+    min-height: 250px;
   }
 }

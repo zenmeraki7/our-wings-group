@@ -580,22 +580,23 @@
 @media (max-width: 1100px) {
   .heroInner {
     grid-template-columns:
-      minmax(0, 1fr)
-      minmax(380px, 0.8fr);
+      minmax(0, 1.1fr)
+      minmax(340px, 0.9fr);
   }
 
   .heroContent {
     padding:
-      70px
-      38px;
+      54px
+      34px
+      60px;
   }
 
   .heroTitle {
     font-size:
       clamp(
-        53px,
-        6vw,
-        72px
+        48px,
+        5.5vw,
+        68px
       );
   }
 
@@ -608,12 +609,19 @@
       repeat(2, 1fr);
   }
 
+  .trustItem:nth-child(1),
+  .trustItem:nth-child(2) {
+    border-bottom:
+      1px solid
+      rgba(23, 37, 84, 0.1);
+  }
+
   .trustItem:nth-child(2) {
     border-right: 0;
   }
 
   .trustItem {
-    padding: 15px 25px;
+    padding: 16px 24px;
   }
 }
 
@@ -623,6 +631,10 @@
 ========================================================= */
 
 @media (max-width: 820px) {
+  .hero {
+    padding-top: 72px;
+  }
+
   .heroInner {
     display: flex;
     flex-direction: column;
@@ -632,9 +644,9 @@
     min-height: auto;
 
     padding:
-      64px
-      22px
-      54px;
+      44px
+      clamp(18px, 5vw, 28px)
+      48px;
 
     background:
       linear-gradient(
@@ -668,18 +680,20 @@
 
     font-size:
       clamp(
-        46px,
-        13vw,
-        66px
+        38px,
+        11vw,
+        58px
       );
 
-    line-height: 0.97;
+    line-height: 1.02;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .heroDescription {
-    margin-top: 23px;
+    margin-top: 20px;
 
-    font-size: 16px;
+    font-size: 15.5px;
 
     line-height: 1.6;
   }
@@ -688,18 +702,21 @@
     align-items: stretch;
     flex-direction: column;
 
-    margin-top: 28px;
+    margin-top: 26px;
+    gap: 12px;
   }
 
   .primaryButton,
   .secondaryButton {
     width: 100%;
 
-    min-height: 56px;
+    min-height: 52px;
+    justify-content: center;
+    font-size: clamp(14px, 3.8vw, 15px);
   }
 
   .visual {
-    min-height: 390px;
+    min-height: 360px;
   }
 
   .heroImage {
@@ -717,15 +734,15 @@
   }
 
   .travelStamp {
-    right: 22px;
-    bottom: 24px;
+    right: 20px;
+    bottom: 20px;
 
-    width: 92px;
-    height: 92px;
+    width: 84px;
+    height: 84px;
   }
 
   .visualKeywords {
-    top: 25px;
+    top: 20px;
     right: 20px;
   }
 
@@ -734,12 +751,12 @@
 
     padding:
       18px
-      22px;
+      clamp(16px, 4vw, 24px);
   }
 
   .trustItem {
     padding:
-      17px
+      16px
       0;
 
     border-right: 0;
@@ -761,19 +778,33 @@
 
 @media (max-width: 480px) {
   .heroContent {
-    padding-top: 48px;
+    padding-top: 32px;
+    padding-bottom: 38px;
   }
 
   .heroTitle {
-    font-size: 45px;
+    font-size: clamp(30px, 9.6vw, 42px);
+    line-height: 1.04;
+  }
+
+  .heroDescription {
+    font-size: 14.5px;
+    margin-top: 16px;
   }
 
   .visual {
-    min-height: 330px;
+    min-height: 290px;
   }
 
   .travelStamp {
     display: none;
+  }
+
+  .visualKeywords {
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
   }
 }
 
@@ -1256,12 +1287,12 @@
 
 @media (max-width: 900px) {
   .aboutSection {
-    padding: 65px 0 70px;
+    padding: 60px 0 66px;
   }
 
   .aboutContainer {
     width: min(
-      100% - 36px,
+      calc(100% - 32px),
       740px
     );
   }
@@ -1277,9 +1308,9 @@
   .aboutTitle {
     font-size:
       clamp(
-        42px,
-        8vw,
-        58px
+        34px,
+        7.5vw,
+        52px
       );
   }
 
@@ -1288,7 +1319,7 @@
   }
 
   .aboutMosaic {
-    min-height: 485px;
+    min-height: 460px;
   }
 
   .aboutStats {
@@ -1320,28 +1351,36 @@
 @media (max-width: 600px) {
   .aboutSection {
     padding:
-      52px
+      48px
       0
-      60px;
+      56px;
+  }
+
+  .aboutContainer {
+    width: calc(100% - clamp(20px, 5vw, 32px));
   }
 
   .aboutTitle {
-    font-size: 42px;
+    font-size: clamp(28px, 8.5vw, 40px);
+    line-height: 1.05;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .aboutDescription {
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
   .aboutBottom {
     align-items: stretch;
     flex-direction: column;
+    gap: 16px;
   }
 
   .aboutButton {
     justify-content: space-between;
-
     width: 100%;
+    min-height: 50px;
   }
 
   .aboutTagline {
@@ -1349,47 +1388,42 @@
   }
 
   .aboutMosaic {
-    min-height: 370px;
+    min-height: 350px;
   }
 
   .workerImage {
     left: 0;
-    top: 35px;
-
+    top: 30px;
     width: 34%;
-    height: 185px;
+    height: 175px;
   }
 
   .nurseImage {
     left: 36%;
     top: 0;
-
     width: 38%;
-    height: 195px;
+    height: 185px;
   }
 
   .passportImageBox {
     right: 0;
-    top: 38px;
-
-    width: 24%;
-    height: 120px;
+    top: 32px;
+    width: 25%;
+    height: 115px;
   }
 
   .flightImage {
     left: 28%;
-    bottom: 15px;
-
+    bottom: 12px;
     width: 51%;
-    height: 150px;
+    height: 145px;
   }
 
   .cityImage {
     right: 0;
-    bottom: 28px;
-
-    width: 24%;
-    height: 170px;
+    bottom: 24px;
+    width: 25%;
+    height: 160px;
   }
 
   .aboutHandwriting {
@@ -1398,17 +1432,14 @@
 
   .aboutStats {
     grid-template-columns: 1fr;
-
     padding-top: 15px;
   }
 
   .aboutStat {
     padding:
-      18px
+      16px
       0;
-
     border-right: 0;
-
     border-bottom:
       1px solid
       rgba(23, 37, 84, 0.09);
@@ -1421,6 +1452,55 @@
   }
 
   .aboutStatValue {
-    font-size: 27px;
+    font-size: clamp(24px, 6.5vw, 28px);
+  }
+}
+
+/* =========================================================
+   COMPACT MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .aboutMosaic {
+    min-height: 290px;
+  }
+
+  .workerImage {
+    left: 0;
+    top: 24px;
+    width: 37%;
+    height: 140px;
+  }
+
+  .nurseImage {
+    left: 38%;
+    top: 0;
+    width: 38%;
+    height: 150px;
+  }
+
+  .passportImageBox {
+    right: 0;
+    top: 26px;
+    width: 25%;
+    height: 95px;
+  }
+
+  .flightImage {
+    left: 26%;
+    bottom: 8px;
+    width: 52%;
+    height: 120px;
+  }
+
+  .cityImage {
+    right: 0;
+    bottom: 16px;
+    width: 25%;
+    height: 130px;
+  }
+
+  .aboutStatValue {
+    font-size: 24px;
   }
 }

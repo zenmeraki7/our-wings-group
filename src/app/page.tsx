@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GlobalDestinations from "@/components/GlobalDestinations";
+import InquiryModal from "@/components/InquiryModal";
 
 import styles from "./page.module.css";
 
@@ -18,20 +21,26 @@ const playfair = Playfair_Display({
 });
 
 export default function HomePage() {
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar onOpenInquiry={() => setIsInquiryOpen(true)} />
       <main className={`${inter.variable} ${playfair.variable}`}>
-        <GlobalTalentHero />
-        <AboutOurWingsSection />
-        <GlobalDestinations />
+        <GlobalTalentHero onOpenInquiry={() => setIsInquiryOpen(true)} />
+        <AboutOurWingsSection onOpenInquiry={() => setIsInquiryOpen(true)} />
+        <GlobalDestinations onOpenInquiry={() => setIsInquiryOpen(true)} />
       </main>
       <Footer />
+      <InquiryModal
+        isOpen={isInquiryOpen}
+        onClose={() => setIsInquiryOpen(false)}
+      />
     </>
   );
 }
 
-function GlobalTalentHero() {
+function GlobalTalentHero({ onOpenInquiry }: { onOpenInquiry?: () => void }) {
   return (
     <section className={styles.hero}>
       <div
@@ -64,20 +73,21 @@ function GlobalTalentHero() {
 
           <div className={styles.heroActions}>
             <a
-              href="/jobs"
+              href="#destinations"
               className={styles.primaryButton}
             >
               <span>Explore Job Opportunities</span>
               <ArrowIcon />
             </a>
 
-            <a
-              href="/hire-global-talent"
+            <button
+              type="button"
+              onClick={onOpenInquiry}
               className={styles.secondaryButton}
             >
               <span>Hire Global Talent</span>
               <ArrowIcon />
-            </a>
+            </button>
           </div>
         </div>
 
@@ -129,7 +139,7 @@ function GlobalTalentHero() {
 
 function TrustStrip() {
   return (
-    <div className={styles.trustStrip}>
+    <div className={styles.trustStrip} id="trust">
       <div className={styles.trustInner}>
         <TrustItem
           icon={<BuildingIcon />}
@@ -182,9 +192,9 @@ function TrustItem({ icon, title, description }: TrustItemProps) {
    ABOUT OUR WINGS SECTION
 ========================================================= */
 
-function AboutOurWingsSection() {
+function AboutOurWingsSection({ onOpenInquiry }: { onOpenInquiry?: () => void }) {
   return (
-    <section className={styles.aboutSection}>
+    <section className={styles.aboutSection} id="about">
       <div className={styles.aboutContainer}>
         <div className={styles.aboutGrid}>
 
@@ -215,13 +225,14 @@ function AboutOurWingsSection() {
             </p>
 
             <div className={styles.aboutBottom}>
-              <a
-                href="/about-us"
+              <button
+                type="button"
+                onClick={onOpenInquiry}
                 className={styles.aboutButton}
               >
                 Learn More
                 <ArrowIcon />
-              </a>
+              </button>
 
               <div className={styles.aboutTagline}>
                 <span className={styles.taglineLine} />

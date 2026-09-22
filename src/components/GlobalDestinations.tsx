@@ -70,9 +70,13 @@ const destinations: Destination[] = [
   },
 ];
 
-export default function GlobalDestinations() {
+interface GlobalDestinationsProps {
+  onOpenInquiry?: () => void;
+}
+
+export default function GlobalDestinations({ onOpenInquiry }: GlobalDestinationsProps) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="destinations">
       <div className={styles.container}>
         {/* =========================
             HEADER
@@ -167,13 +171,24 @@ export default function GlobalDestinations() {
               </h3>
             </div>
 
-            <Link
-              href="/jobs"
-              className={styles.ctaButton}
-            >
-              Explore All Countries
-              <ArrowIcon />
-            </Link>
+            {onOpenInquiry ? (
+              <button
+                type="button"
+                onClick={onOpenInquiry}
+                className={styles.ctaButton}
+              >
+                <span>Start Your Inquiry</span>
+                <ArrowIcon />
+              </button>
+            ) : (
+              <Link
+                href="#contact"
+                className={styles.ctaButton}
+              >
+                <span>Explore Opportunities</span>
+                <ArrowIcon />
+              </Link>
+            )}
 
             <div className={styles.ctaFeatures}>
               <MiniFeature
