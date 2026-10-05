@@ -66,11 +66,11 @@ npm ci
 npm run build
 npx wrangler login
 npx wrangler pages project list
-npx wrangler pages deploy out --project-name our-wings-group --branch main
+npx wrangler pages deploy out --project-name ourwings-overseas --branch main
 ```
 
 Use the existing Cloudflare Pages project name if it differs. If this is a new
-project, first run `npx wrangler pages project create our-wings-group
+project, first run `npx wrangler pages project create ourwings-overseas
 --production-branch main` as one command.
 
 For Git integration, connect this repository with production branch `main`,
