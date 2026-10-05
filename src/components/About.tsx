@@ -53,7 +53,7 @@ export default function About() {
     {
       year: "2026",
       title: "Unified Global Enterprise",
-      desc: "Consolidated all divisions under Our Wings Group holding structure, commanding 85+ aircraft and 48 intercontinental freight nodes.",
+      desc: "Consolidated all divisions under Our Wings Overseas holding structure, commanding 85+ aircraft and 48 intercontinental freight nodes.",
     },
   ];
 

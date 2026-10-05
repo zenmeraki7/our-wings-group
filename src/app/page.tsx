@@ -143,8 +143,8 @@ function TrustStrip() {
       <div className={styles.trustInner}>
         <TrustItem
           icon={<BuildingIcon />}
-          title="Government Authorized"
-          description="MEA approved recruitment agency"
+          title="Verified Opportunities"
+          description="Connecting talent with leading markets"
         />
 
         <TrustItem
@@ -208,13 +208,13 @@ function AboutOurWingsSection({ onOpenInquiry }: { onOpenInquiry?: () => void })
             <h2 className={styles.aboutTitle}>
               About{" "}
               <span>Our Wings</span>{" "}
-              International
+              Overseas
             </h2>
 
             <p className={styles.aboutDescription}>
-              Our Wings International is a government-authorized
-              recruitment and visa assistance agency committed to
-              creating life-changing opportunities.
+              Our Wings Overseas is an international recruitment
+              and visa assistance agency committed to creating
+              life-changing opportunities.
             </p>
 
             <p className={styles.aboutDescription}>

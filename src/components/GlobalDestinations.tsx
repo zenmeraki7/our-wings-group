@@ -15,22 +15,13 @@ export interface Destination {
 
 const destinations: Destination[] = [
   {
-    code: "SA",
-    name: "Saudi Arabia",
-    flag: "/images/flags/saudi-arabia.svg",
-    image: "/images/destinations/saudi.webp",
-    description:
-      "Large-scale construction, infrastructure and industrial manpower opportunities.",
-    href: "/jobs/saudi-arabia",
-  },
-  {
-    code: "AE",
-    name: "United Arab Emirates",
+    code: "DXB",
+    name: "Dubai",
     flag: "/images/flags/uae.svg",
     image: "/images/destinations/uae.webp",
     description:
-      "Construction, hospitality, aviation, logistics and professional roles across the Emirates.",
-    href: "/jobs/uae",
+      "High-growth careers in hospitality, construction, aviation, engineering, logistics, and luxury services.",
+    href: "/jobs/dubai",
   },
   {
     code: "QA",
@@ -38,35 +29,35 @@ const destinations: Destination[] = [
     flag: "/images/flags/qatar.svg",
     image: "/images/destinations/qatar.webp",
     description:
-      "Infrastructure, hospitality and skilled trade opportunities in a dynamic market.",
+      "Major infrastructure projects, energy support, healthcare, hospitality, and skilled technical trades.",
     href: "/jobs/qatar",
   },
   {
-    code: "OM",
-    name: "Oman",
-    flag: "/images/flags/oman.svg",
-    image: "/images/destinations/oman.webp",
+    code: "RS",
+    name: "Serbia",
+    flag: "/images/flags/serbia.svg",
+    image: "/images/destinations/serbia.jpg",
     description:
-      "Engineering, construction and industrial workforce requirements.",
-    href: "/jobs/oman",
+      "Rapidly expanding European manufacturing, civil construction, transport logistics, and technical workforce roles.",
+    href: "/jobs/serbia",
   },
   {
-    code: "KW",
-    name: "Kuwait",
-    flag: "/images/flags/kuwait.svg",
-    image: "/images/destinations/kuwait.webp",
+    code: "GR",
+    name: "Greece",
+    flag: "/images/flags/greece.svg",
+    image: "/images/destinations/greece.jpg",
     description:
-      "Oil & gas support, construction and facilities manpower.",
-    href: "/jobs/kuwait",
+      "Leading European destination for hospitality management, tourism, seasonal agri-tech, logistics, and trade crafts.",
+    href: "/jobs/greece",
   },
   {
-    code: "BH",
-    name: "Bahrain",
-    flag: "/images/flags/bahrain.svg",
-    image: "/images/destinations/bahrain.webp",
+    code: "MK",
+    name: "Macedonia",
+    flag: "/images/flags/macedonia.svg",
+    image: "/images/destinations/macedonia.jpg",
     description:
-      "Hospitality, construction and skilled technical placements.",
-    href: "/jobs/bahrain",
+      "Vibrant Balkan hub offering rewarding pathways in public infrastructure, industrial production, and skilled trades.",
+    href: "/jobs/macedonia",
   },
 ];
 
@@ -133,7 +124,7 @@ export default function GlobalDestinations({ onOpenInquiry }: GlobalDestinations
             <p className={styles.mapNote}>
               From the Middle East
               <br />
-              to Asia and beyond —
+              to Europe and beyond —
               <br />
               new horizons await.
             </p>

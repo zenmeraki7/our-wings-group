@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 48" width="70" height="48">
+  <rect width="70" height="48" fill="#0d5eaf"/>
+  <rect width="70" height="5.33" y="5.33" fill="#ffffff"/>
+  <rect width="70" height="5.33" y="16" fill="#ffffff"/>
+  <rect width="70" height="5.33" y="26.67" fill="#ffffff"/>
+  <rect width="70" height="5.33" y="37.33" fill="#ffffff"/>
+  <!-- Blue Canton -->
+  <rect width="27" height="26.67" fill="#0d5eaf"/>
+  <!-- White Cross -->
+  <rect x="10.8" y="0" width="5.4" height="26.67" fill="#ffffff"/>
+  <rect x="0" y="10.6" width="27" height="5.4" fill="#ffffff"/>
+</svg>

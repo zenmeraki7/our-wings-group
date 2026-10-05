@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Plane, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 interface NavbarProps {
   onOpenInquiry?: () => void;
@@ -59,29 +60,40 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             display: "flex",
             alignItems: "center",
             gap: "clamp(0.5rem, 2vw, 0.85rem)",
-            flexShrink: 0,
+            flexShrink: 1,
+            minWidth: 0,
             whiteSpace: "nowrap",
             textDecoration: "none",
           }}
         >
           <div
             style={{
-              width: "clamp(36px, 4.5vw, 42px)",
-              height: "clamp(36px, 4.5vw, 42px)",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #e8cca4 0%, #dfc295 50%, #c99f5e 100%)",
+              position: "relative",
+              width: "clamp(42px, 5.2vw, 52px)",
+              height: "clamp(42px, 5.2vw, 52px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 4px 18px rgba(229, 194, 135, 0.35)",
-              border: "1px solid rgba(255, 255, 255, 0.3)",
               flexShrink: 0,
             }}
           >
-            <Plane size={20} color="#070a1e" style={{ transform: "rotate(-45deg)" }} />
+            <Image
+              src="/images/logo.png"
+              alt="Our Wings Overseas Logo"
+              width={52}
+              height={52}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                filter: "drop-shadow(0 2px 12px rgba(229, 194, 135, 0.45))",
+              }}
+              priority
+            />
           </div>
-          <div style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
+          <div style={{ whiteSpace: "nowrap", flexShrink: 1, minWidth: 0 }}>
             <div
+              className="navbar-brand-name"
               style={{
                 fontFamily: "var(--font-heading)",
                 fontSize: "clamp(1rem, 3.8vw, 1.25rem)",
@@ -95,9 +107,10 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
               }}
             >
               <span>OUR WINGS</span>
-              <span style={{ color: "#e5c287" }}>GROUP</span>
+              <span style={{ color: "#e5c287" }}>OVERSEAS</span>
             </div>
             <div
+              className="navbar-tagline"
               style={{
                 fontSize: "clamp(0.6rem, 2.3vw, 0.68rem)",
                 letterSpacing: "0.12em",
@@ -153,25 +166,6 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
           }}
           className="desktop-nav"
         >
-          <div
-            className="mea-badge"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.45rem",
-              fontSize: "0.8rem",
-              color: "#e5c287",
-              background: "rgba(229, 194, 135, 0.08)",
-              padding: "0.4rem 0.85rem",
-              borderRadius: "var(--radius-full)",
-              border: "1px solid rgba(229, 194, 135, 0.28)",
-              fontWeight: 600,
-              flexShrink: 0,
-            }}
-          >
-            <ShieldCheck size={15} color="#e5c287" />
-            <span>Govt. Authorized • MEA Approved</span>
-          </div>
 
           <button
             onClick={onOpenInquiry}
@@ -205,8 +199,8 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             display: "none",
             alignItems: "center",
             justifyContent: "center",
-            minWidth: "42px",
-            minHeight: "42px",
+            minWidth: "44px",
+            minHeight: "44px",
           }}
           className="mobile-toggle"
         >
@@ -231,25 +225,6 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             animation: "fadeIn 0.2s ease",
           }}
         >
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.45rem",
-              fontSize: "0.78rem",
-              color: "#e5c287",
-              background: "rgba(229, 194, 135, 0.08)",
-              padding: "0.35rem 0.75rem",
-              borderRadius: "var(--radius-full)",
-              border: "1px solid rgba(229, 194, 135, 0.25)",
-              fontWeight: 600,
-              width: "fit-content",
-              marginBottom: "0.5rem",
-            }}
-          >
-            <ShieldCheck size={14} color="#e5c287" />
-            <span>Govt. Authorized • MEA Approved</span>
-          </div>
 
           {navLinks.map((link) => (
             <a
@@ -317,9 +292,14 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             display: flex !important;
           }
         }
-        @media (max-width: 1240px) {
-          .mea-badge {
+        @media (max-width: 420px) {
+          .navbar-tagline {
             display: none !important;
+          }
+        }
+        @media (max-width: 360px) {
+          .navbar-brand-name {
+            font-size: 0.88rem !important;
           }
         }
       `}</style>

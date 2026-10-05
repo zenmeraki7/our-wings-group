@@ -93,7 +93,7 @@ export default function Divisions({ onSelectDivision }: DivisionsProps) {
         "Wildlife Protection & Anti-Poaching Aerial Patrol Grants",
       ],
       description:
-        "Our Wings Group believes elevated capability demands elevated responsibility. Our philanthropic wing provides rapid emergency airlift wherever natural disasters strike, while training the next generation of aviators.",
+        "Our Wings Overseas believes elevated capability demands elevated responsibility. Our philanthropic wing provides rapid emergency airlift wherever natural disasters strike, while training the next generation of aviators.",
     },
   ];
 

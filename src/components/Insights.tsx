@@ -6,7 +6,7 @@ import { Newspaper, ArrowUpRight, Calendar } from "lucide-react";
 export default function Insights() {
   const articles = [
     {
-      title: "Our Wings Group Announces Acquisition of 14 Long-Range Bombardier Global 7500s",
+      title: "Our Wings Overseas Announces Acquisition of 14 Long-Range Bombardier Global 7500s",
       category: "Aviation Expansion",
       date: "September 15, 2026",
       summary: "Expanding our ultra-long-range non-stop charter capability connecting London, Singapore, and New York with next-generation avionics.",

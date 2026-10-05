@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 48" width="70" height="48">
+  <rect width="70" height="16" y="0" fill="#c6363c"/>
+  <rect width="70" height="16" y="16" fill="#0c4076"/>
+  <rect width="70" height="16" y="32" fill="#ffffff"/>
+  <!-- Simplified Serbian Eagle Shield -->
+  <g transform="translate(18, 10)">
+    <path d="M0,0 h16 v16 a8,8 0 0,1 -8,8 a8,8 0 0,1 -8,-8 Z" fill="#c6363c" stroke="#e5c287" stroke-width="1.5"/>
+    <path d="M8,4 v16 M4,8 h8" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Crown -->
+    <path d="M1,-2 l3,3 l4,-3 l4,3 l3,-3 v2 h-14 Z" fill="#e5c287"/>
+  </g>
+</svg>

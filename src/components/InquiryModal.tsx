@@ -38,14 +38,47 @@ export default function InquiryModal({ isOpen, onClose, defaultDivision }: Inqui
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setReferenceId(`WG-${Math.floor(100000 + Math.random() * 900000)}`);
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-    }, 900);
+    const ref = `WG-${Math.floor(100000 + Math.random() * 900000)}`;
+    setReferenceId(ref);
+
+    const istDate = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+
+    try {
+      await fetch("https://formsubmit.co/ajax/vinithaavin18@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `🔔 New Partner/Candidate Inquiry [Ref: ${ref}] - Our Wings Overseas`,
+          _template: "table",
+          _captcha: "false",
+          "Full Name": formData.name,
+          "Email Address": formData.email,
+          "Phone Number": formData.phone,
+          "Organization": formData.company || "Individual Candidate",
+          "Selected Division / Sector": formData.division,
+          "Message / Details": formData.scope,
+          "Ticket Reference": ref,
+          "Submitted At": istDate,
+        }),
+      });
+    } catch (err) {
+      console.warn("Inquiry email warning:", err);
+    }
+
+    try {
+      const existing = JSON.parse(localStorage.getItem("our_wings_inquiries") || "[]");
+      existing.unshift({ ref, ...formData, date: istDate });
+      localStorage.setItem("our_wings_inquiries", JSON.stringify(existing));
+    } catch {}
+
+    setIsLoading(false);
+    setIsSubmitted(true);
   };
 
   const handleReset = () => {
@@ -103,7 +136,7 @@ export default function InquiryModal({ isOpen, onClose, defaultDivision }: Inqui
                 <span>CONFIDENTIAL INQUIRY</span>
               </div>
               <h3 style={{ fontSize: "clamp(1.25rem, 4vw, 1.6rem)", color: "#fff" }}>
-                Partner With Our Wings Group
+                Partner With Our Wings Overseas
               </h3>
               <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", marginTop: "0.25rem" }}>
                 Connect directly with our corporate dispatch, recruitment desk, or overseas placement team.

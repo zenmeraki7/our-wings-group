@@ -1,6 +1,6 @@
-# Our Wings Group — Overseas Recruitment & Manpower Consultancy
+# Our Wings Overseas — Overseas Recruitment & Manpower Consultancy
 
-A Next.js 16 web application featuring the **Indigo + Sand** design system for **Our Wings Group**, an MEA-approved government-authorized international recruitment and visa assistance agency.
+A Next.js 16 web application featuring the **Indigo + Sand** design system for **Our Wings Overseas**, an international recruitment and visa assistance agency.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/zenmeraki7/our-wings-group)
 
@@ -52,5 +52,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ```bash
 npm run build
-npm run start
 ```
+
+The project uses Next.js static export. The production website is generated in
+`out/`; host that directory directly (`next start` does not serve static exports).
+
+## Deploying on Cloudflare Pages
+
+Build and deploy from the project directory:
+
+```bash
+npm ci
+npm run build
+npx wrangler login
+npx wrangler pages project list
+npx wrangler pages deploy out --project-name our-wings-group --branch main
+```
+
+Use the existing Cloudflare Pages project name if it differs. If this is a new
+project, first run `npx wrangler pages project create our-wings-group
+--production-branch main` as one command.
+
+For Git integration, connect this repository with production branch `main`,
+build command `npm run build`, and build output directory `out`.
+
+See [Cloudflare's static Next.js deployment guide](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/).

@@ -73,7 +73,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
               lineHeight: 1.7,
             }}
           >
-            <strong>Our Wings Group</strong> is a premier international conglomerate orchestrating world-class
+            <strong>Our Wings Overseas</strong> is a premier international conglomerate orchestrating world-class
             private aviation, automated supply chain logistics, frontier engineering ventures, and philanthropic foundations
             across 4 continents.
           </p>

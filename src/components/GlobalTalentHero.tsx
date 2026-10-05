@@ -125,8 +125,8 @@ function TrustStrip() {
       <div className={styles.trustInner}>
         <TrustItem
           icon={<BuildingIcon />}
-          title="Government Authorized"
-          description="MEA approved recruitment agency"
+          title="Verified Opportunities"
+          description="Connecting talent with leading markets"
         />
 
         <TrustItem
